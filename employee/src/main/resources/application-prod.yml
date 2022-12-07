@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://db-payroll:3306/payroll
+    username: root
+    password: root
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://registry-payroll:8761/eureka
+  instance:
+    instance-id: ${spring.application.name}
+    preferIpAddress: true

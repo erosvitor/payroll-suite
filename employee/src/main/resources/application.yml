@@ -1,0 +1,45 @@
+server:
+  port: ${PORT:0}
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: none
+    open-in-view: true
+  application:
+    name: service-employee
+  cloud:
+    loadbalancer:
+      cache:
+        enabled: false
+  profiles:
+    active: ${PROFILE_PAYROLL:dev}
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include:
+        - info
+        - prometheus
+  endpoint:
+    info:
+      enabled: true
+    prometheus:
+      enabled: true  
+  info:
+    java:
+      enabled: true
+    env:
+      enabled: true
+
+info:
+  app:
+    name: service-employee
+    description: Serviço que provê recursos para cadastro de empregados
+    version: 0.0.1-SNAPSHOT
+    author: Eros Vitor Bornatowski
