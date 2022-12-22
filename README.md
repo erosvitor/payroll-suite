@@ -9,7 +9,7 @@ Project created in the course Microservices with Spring Boot.
 ## Steps to Setup
 1. Clone the application
 ```
-git clone ....
+git clone https://github.com/erosvitor/payroll-suite.git
 ```
 
 2. Build the project
